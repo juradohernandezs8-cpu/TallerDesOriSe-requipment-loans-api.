@@ -1,0 +1,3 @@
+usta\model\Product.class
+usta\controller\ProductController.class
+usta\model\ProductRepository.class
