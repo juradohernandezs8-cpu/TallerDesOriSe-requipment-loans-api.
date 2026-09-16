@@ -192,6 +192,3 @@ quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/library
 quarkus.hibernate-orm.database.generation=update
 quarkus.hibernate-orm.database.version-check.enabled=false
 ```
-
-> XAMPP usa **MariaDB** (se reporta como 5.5.5); por eso se desactiva la verificación de
-> versión de Hibernate. Las tablas `books`, `members` y `member_books` se crean/actualizan automáticamente.
