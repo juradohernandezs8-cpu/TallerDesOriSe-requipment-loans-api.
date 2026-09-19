@@ -5,7 +5,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
 
-// Convierte 400 en JSON con el mensaje ("Sin stock disponible..." / validaciones)
+// Convierte 400 en JSON con el mensaje ("Sin stock disponible..." / reglas de negocio)
 @Provider
 public class BadRequestExceptionMapper implements ExceptionMapper<BadRequestException> {
     @Override

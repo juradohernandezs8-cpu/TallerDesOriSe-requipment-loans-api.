@@ -5,7 +5,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
 
-// Convierte 404 en JSON con el mensaje ("Libro no encontrado" / "Miembro no encontrado")
+// Convierte 404 en JSON con el mensaje ("Equipo no encontrado" / "Estudiante no encontrado" / "Préstamo no encontrado")
 @Provider
 public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundException> {
     @Override

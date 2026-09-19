@@ -1,0 +1,198 @@
+{
+  "info": {
+    "name": "equipment-loans-api",
+    "description": "Colección para probar la API de préstamo de equipos TIC (Semana 7 - Desarrollo Orientado a Servicios)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "equipmentId", "value": "1" },
+    { "key": "studentId", "value": "1" },
+    { "key": "loanId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Equipment",
+      "item": [
+        {
+          "name": "Listar equipos",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/equipment" }
+        },
+        {
+          "name": "Crear equipo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"code\":\"EQ-001\",\"name\":\"Portátil Dell Latitude\",\"stock\":5}"
+            },
+            "url": "{{baseUrl}}/api/equipment"
+          }
+        },
+        {
+          "name": "Crear equipo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"code\":\"\",\"name\":\"\",\"stock\":null}"
+            },
+            "url": "{{baseUrl}}/api/equipment"
+          }
+        },
+        {
+          "name": "Obtener equipo por id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/equipment/{{equipmentId}}" }
+        },
+        {
+          "name": "Obtener equipo por id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/equipment/999" }
+        },
+        {
+          "name": "Actualizar equipo",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"code\":\"EQ-001\",\"name\":\"Portátil Dell Latitude 5420\",\"stock\":4}"
+            },
+            "url": "{{baseUrl}}/api/equipment/{{equipmentId}}"
+          }
+        },
+        {
+          "name": "Eliminar equipo",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/equipment/{{equipmentId}}" }
+        },
+        {
+          "name": "Eliminar equipo",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/equipment/999" }
+        }
+      ]
+    },
+    {
+      "name": "Students",
+      "item": [
+        {
+          "name": "Listar estudiantes",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/students" }
+        },
+        {
+          "name": "Crear estudiante",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Ana Pérez\",\"email\":\"ana@usantoto.edu.co\",\"program\":\"Ingeniería de Sistemas\"}"
+            },
+            "url": "{{baseUrl}}/api/students"
+          }
+        },
+        {
+          "name": "Crear estudiante",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Ana Pérez\",\"email\":\"correo-no-valido\",\"program\":\"Ingeniería de Sistemas\"}"
+            },
+            "url": "{{baseUrl}}/api/students"
+          }
+        },
+        {
+          "name": "Obtener estudiante por id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/students/{{studentId}}" }
+        },
+        {
+          "name": "Obtener estudiante por id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/students/999" }
+        },
+        {
+          "name": "Actualizar estudiante",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Ana Pérez\",\"email\":\"ana.perez@usantoto.edu.co\",\"program\":\"Ingeniería de Sistemas\"}"
+            },
+            "url": "{{baseUrl}}/api/students/{{studentId}}"
+          }
+        },
+        {
+          "name": "Eliminar estudiante",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/students/{{studentId}}" }
+        }
+      ]
+    },
+    {
+      "name": "Loans",
+      "item": [
+        {
+          "name": "Listar préstamos",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/loans" }
+        },
+        {
+          "name": "Registrar préstamo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"equipmentId\":{{equipmentId}},\"studentId\":{{studentId}},\"quantity\":1}"
+            },
+            "url": "{{baseUrl}}/api/loans"
+          }
+        },
+        {
+          "name": "Registrar préstamo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"equipmentId\":999,\"studentId\":{{studentId}},\"quantity\":1}"
+            },
+            "url": "{{baseUrl}}/api/loans"
+          }
+        },
+        {
+          "name": "Registrar préstamo",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"equipmentId\":{{equipmentId}},\"studentId\":{{studentId}},\"quantity\":9999}"
+            },
+            "url": "{{baseUrl}}/api/loans"
+          }
+        },
+        {
+          "name": "Obtener préstamo por id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/loans/{{loanId}}" }
+        },
+        {
+          "name": "Devolver préstamo",
+          "request": { "method": "PUT", "url": "{{baseUrl}}/api/loans/{{loanId}}/return" }
+        },
+        {
+          "name": "Devolver préstamo",
+          "request": { "method": "PUT", "url": "{{baseUrl}}/api/loans/{{loanId}}/return" }
+        },
+        {
+          "name": "Eliminar préstamo",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/loans/{{loanId}}" }
+        },
+        {
+          "name": "Eliminar préstamo",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/loans/999" }
+        }
+      ]
+    }
+  ]
+}

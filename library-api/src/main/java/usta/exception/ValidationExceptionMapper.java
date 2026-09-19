@@ -6,7 +6,7 @@ import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
 import java.util.stream.Collectors;
 
-// Mapea errores de Bean Validation a JSON con código 400
+// Mapea errores de Bean Validation (datos incompletos / inválidos) a JSON con código 400
 @Provider
 public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViolationException> {
 
